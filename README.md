@@ -4,7 +4,6 @@
 </p>
 
 # 👋 Hi, I'm LÊ BẢO THIỆN!
-
 Welcome to my GitHub profile! 
 ## 🚀 About Me
 Tôi là Lê Bảo Thiện còn được gọi là BiTi
@@ -14,14 +13,9 @@ Tôi là Lê Bảo Thiện còn được gọi là BiTi
 ![Python](https://img.shields.io/badge/-Python-3776AB?style=flat&logo=python&logoColor=white) ![Node.js](https://img.shields.io/badge/-Node.js-339933?style=flat&logo=node.js&logoColor=white)
 ### Database:
 ![SQL](https://img.shields.io/badge/-SQL-003B57?style=flat&logo=postgresql&logoColor=white) ![Firebase](https://img.shields.io/badge/-Firebase-FFCA28?style=flat&logo=firebase&logoColor=black)
-
-## 🔥 Projects
-
 ## 🌟 GitHub Stats
 ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=BiTi1903&show_icons=true&hide_title=true&hide=prs&count_private=true&theme=radical)
-
 ## 🤝 Connect with Me
-
 [![Facebook](https://img.shields.io/badge/Facebook-1877F2?style=flat&logo=facebook&logoColor=white)](https://www.facebook.com/dunghackfemnha/)  
 [![Email](https://img.shields.io/badge/Email-0078D4?style=flat&logo=microsoft-outlook&logoColor=white)](mailto:lethien1932003@gmail.com)
 
