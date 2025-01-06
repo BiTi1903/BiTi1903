@@ -7,12 +7,9 @@
 Welcome to my GitHub profile! 
 ## 🚀 About Me
 Tôi là Lê Bảo Thiện còn được gọi là BiTi
-### Frontend:
-![React](https://img.shields.io/badge/-React-61DBFB?style=flat&logo=react&logoColor=white) ![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=white)
-### Backend:
-![Python](https://img.shields.io/badge/-Python-3776AB?style=flat&logo=python&logoColor=white) ![Node.js](https://img.shields.io/badge/-Node.js-339933?style=flat&logo=node.js&logoColor=white)
-### Database:
-![SQL](https://img.shields.io/badge/-SQL-003B57?style=flat&logo=postgresql&logoColor=white) ![Firebase](https://img.shields.io/badge/-Firebase-FFCA28?style=flat&logo=firebase&logoColor=black)
+### Frontend: ![React](https://img.shields.io/badge/-React-61DBFB?style=flat&logo=react&logoColor=white) ![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=white)
+### Backend: ![Python](https://img.shields.io/badge/-Python-3776AB?style=flat&logo=python&logoColor=white) ![Node.js](https://img.shields.io/badge/-Node.js-339933?style=flat&logo=node.js&logoColor=white)
+### Database: ![SQL](https://img.shields.io/badge/-SQL-003B57?style=flat&logo=postgresql&logoColor=white) ![Firebase](https://img.shields.io/badge/-Firebase-FFCA28?style=flat&logo=firebase&logoColor=black)
 ## 🌟 GitHub Stats
 ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=BiTi1903&show_icons=true&hide_title=true&hide=prs&count_private=true&theme=radical)
 ## 🤝 Connect with Me
