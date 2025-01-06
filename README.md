@@ -1,27 +1,33 @@
-# 👋 Hi, I'm Lê Bảo Thiện!
+<!-- Background Image -->
+<p align="center">
+  <img src="https://your-image-url.com/background.jpg" alt="Background" width="100%" />
+</p>
 
-Welcome to my GitHub profile!
+# 👋 Hi, I'm LÊ BẢO THIỆN!
+
+Welcome to my GitHub profile! 
+<p align="center">
+  <img src="https://your-image-url.com/profile.jpg" width="150" alt="Profile Image" />
+</p>
 
 ## 🚀 About Me
 
-Tôi là Lê Bảo Thiện
-
-## 🛠️ Technologies & Tools
+Tôi là Lê Bảo Thiện còn được gọi là BiTi
 
 ### Frontend:
 ![React](https://img.shields.io/badge/-React-61DBFB?style=flat&logo=react&logoColor=white) ![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=white)
-
 ### Backend:
 ![Python](https://img.shields.io/badge/-Python-3776AB?style=flat&logo=python&logoColor=white) ![Node.js](https://img.shields.io/badge/-Node.js-339933?style=flat&logo=node.js&logoColor=white)
-
 ### Database:
 ![SQL](https://img.shields.io/badge/-SQL-003B57?style=flat&logo=postgresql&logoColor=white) ![Firebase](https://img.shields.io/badge/-Firebase-FFCA28?style=flat&logo=firebase&logoColor=black)
-
 ### DevOps:
 ![Docker](https://img.shields.io/badge/-Docker-2496ED?style=flat&logo=docker&logoColor=white) ![Git](https://img.shields.io/badge/-Git-F05032?style=flat&logo=git&logoColor=white)
-
+## 🔥 Projects
+### [Food Sales Web App](https://github.com/BiTi1903/project1)
+A web application that allows users to order food online, complete with a mobile payment system and optimized for performance using **multithreading**.
+### [Dynamic Nutrition Web](https://github.com/BiTi1903/project2)
+A website that generates personalized meal plans and nutrition suggestions based on users' fitness goals (weight loss, weight gain, or maintenance).
 ## 🌟 GitHub Stats
-
 ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=BiTi1903&show_icons=true&hide_title=true&hide=prs&count_private=true&theme=radical)
 
 ## 📈 GitHub Streak
