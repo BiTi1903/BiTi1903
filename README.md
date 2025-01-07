@@ -12,8 +12,6 @@ Tôi là Lê Bảo Thiện còn được gọi là BiTi
 ### Database: ![SQL](https://img.shields.io/badge/-SQL-003B57?style=flat&logo=postgresql&logoColor=white) ![Firebase](https://img.shields.io/badge/-Firebase-FFCA28?style=flat&logo=firebase&logoColor=black)
 ## 🌟 GitHub Stats
 ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=BiTi1903&show_icons=true&hide_title=true&hide=prs&count_private=true&theme=radical)
-## 🌟 GitHub Language
-![Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=BiTi1903&layout=compact&theme=tokyonight)
 ## 🤝 Connect with Me
 [![Facebook](https://img.shields.io/badge/Facebook-1877F2?style=flat&logo=facebook&logoColor=white)](https://www.facebook.com/dunghackfemnha/)  
 [![Email](https://img.shields.io/badge/Email-0078D4?style=flat&logo=microsoft-outlook&logoColor=white)](mailto:lethien1932003@gmail.com)
