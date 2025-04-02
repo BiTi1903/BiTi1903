@@ -15,7 +15,7 @@
 </div>
 
 <!-- GitHub Stats Section -->
-<h2 class="text-center my-4">🔥 GitHub Stats 🔥</h2>
+<h2 class="text-center my-4">🔥🔥</h2>
 
 
 <!-- GitHub Stats -->
