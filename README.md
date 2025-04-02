@@ -1,5 +1,4 @@
 <a href="#" target="_blank">
-  <img src="https://scontent.fsgn1-1.fna.fbcdn.net/v/t39.30808-6/469522732_2137841116630957_661596625779349055_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeF-Ee-4wLfpaQRU6qxoeL0on4HqPw61pEOfgeo_DrWkQ26qf6MVyKjMRpq2OV85edaZBoOMOlOzaNgfWAaknn3o&_nc_ohc=HRYPBDBaq-MQ7kNvgF0kvAU&_nc_zt=23&_nc_ht=scontent.fsgn1-1.fna&_nc_gid=AwenkCgv96CDT1FBjYYfpAQ&oh=00_AYBQ7OvoEXTXMZmEp5lWM4t70-gIDoTXVPBfpWYwOP0a5w&oe=67826D80" width="100" alt="diendev1-official" class="img-fluid" />
 </a>
 
 <!-- Technologies and Tools Section -->
