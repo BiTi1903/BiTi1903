@@ -1,608 +1,371 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BiTi1903 - Developer Portfolio</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
-            color: #ffffff;
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-
-        /* Animated Background */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 40% 80%, rgba(120, 219, 255, 0.1) 0%, transparent 50%);
-            animation: float 20s ease-in-out infinite;
-            z-index: -1;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            33% { transform: translateY(-20px) rotate(1deg); }
-            66% { transform: translateY(10px) rotate(-1deg); }
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        /* Header Section */
-        .header {
-            text-align: center;
-            margin-bottom: 60px;
-            padding: 40px 0;
-        }
-
-        .profile-section {
-            margin-bottom: 40px;
-        }
-
-        .profile-avatar {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .profile-avatar::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-            animation: shine 3s infinite;
-        }
-
-        @keyframes shine {
-            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
-        }
-
-        .profile-avatar i {
-            font-size: 60px;
-            color: white;
-            z-index: 1;
-        }
-
-        .profile-name {
-            font-size: 2.5rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 10px;
-        }
-
-        .profile-title {
-            font-size: 1.2rem;
-            color: #a0a0a0;
-            margin-bottom: 20px;
-        }
-
-        /* Section Headers */
-        .section-header {
-            text-align: center;
-            margin: 60px 0 40px;
-            position: relative;
-        }
-
-        .section-header h2 {
-            font-size: 2.2rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 10px;
-        }
-
-        .section-header::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 3px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 2px;
-        }
-
-        /* Technologies Section */
-        .tech-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin: 40px 0;
-        }
-
-        .tech-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            padding: 25px;
-            text-align: center;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .tech-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-            transition: left 0.5s;
-        }
-
-        .tech-card:hover::before {
-            left: 100%;
-        }
-
-        .tech-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
-            border-color: rgba(102, 126, 234, 0.5);
-        }
-
-        .tech-badges {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .tech-badge {
-            display: inline-block;
-            transition: transform 0.3s ease;
-        }
-
-        .tech-badge:hover {
-            transform: scale(1.1);
-        }
-
-        .tech-badge img {
-            height: 35px;
-            border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        /* GitHub Stats Section */
-        .stats-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 30px;
-            margin: 40px 0;
-        }
-
-        .stat-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            padding: 20px;
-            transition: all 0.3s ease;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .stat-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: conic-gradient(from 0deg, transparent, rgba(102, 126, 234, 0.1), transparent);
-            animation: rotate 4s linear infinite;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
-        .stat-card:hover::before {
-            opacity: 1;
-        }
-
-        @keyframes rotate {
-            100% { transform: rotate(360deg); }
-        }
-
-        .stat-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(102, 126, 234, 0.2);
-        }
-
-        .stat-card img {
-            width: 100%;
-            border-radius: 10px;
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Contact Section */
-        .contact-section {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 40px;
-            margin: 60px 0;
-            text-align: center;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
-        }
-
-        .contact-item {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            padding: 25px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .contact-item::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
-            transition: all 0.4s ease;
-            transform: translate(-50%, -50%);
-        }
-
-        .contact-item:hover::before {
-            width: 300px;
-            height: 300px;
-        }
-
-        .contact-item:hover {
-            transform: translateY(-5px);
-            border-color: rgba(102, 126, 234, 0.5);
-        }
-
-        .contact-icon {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .contact-item h3 {
-            margin-bottom: 10px;
-            font-size: 1.3rem;
-        }
-
-        .contact-item a {
-            color: #a0a0a0;
-            text-decoration: none;
-            transition: color 0.3s ease;
-            position: relative;
-            z-index: 1;
-        }
-
-        .contact-item:hover a {
-            color: #ffffff;
-        }
-
-        /* Floating Elements */
-        .floating-shapes {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        .shape {
-            position: absolute;
-            opacity: 0.1;
-        }
-
-        .shape-1 {
-            top: 10%;
-            left: 10%;
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            border-radius: 50%;
-            animation: float-1 6s ease-in-out infinite;
-        }
-
-        .shape-2 {
-            top: 60%;
-            right: 10%;
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #f093fb, #f5576c);
-            transform: rotate(45deg);
-            animation: float-2 8s ease-in-out infinite;
-        }
-
-        .shape-3 {
-            bottom: 20%;
-            left: 15%;
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, #4facfe, #00f2fe);
-            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-            animation: float-3 7s ease-in-out infinite;
-        }
-
-        @keyframes float-1 {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(180deg); }
-        }
-
-        @keyframes float-2 {
-            0%, 100% { transform: translateY(0px) rotate(45deg); }
-            50% { transform: translateY(-30px) rotate(225deg); }
-        }
-
-        @keyframes float-3 {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-15px) rotate(90deg); }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .container {
-                padding: 15px;
-            }
-
-            .profile-name {
-                font-size: 2rem;
-            }
-
-            .section-header h2 {
-                font-size: 1.8rem;
-            }
-
-            .stats-container {
-                grid-template-columns: 1fr;
-            }
-
-            .tech-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Glowing text effect */
-        .glow-text {
-            text-shadow: 0 0 10px rgba(102, 126, 234, 0.5);
-        }
-    </style>
-</head>
-<body>
-    <!-- Floating Shapes -->
-    <div class="floating-shapes">
-        <div class="shape shape-1"></div>
-        <div class="shape shape-2"></div>
-        <div class="shape shape-3"></div>
-    </div>
-
-    <div class="container">
-        <!-- Header Section -->
-        <header class="header">
-            <div class="profile-section">
-                <div class="profile-avatar">
-                    <i class="fas fa-code"></i>
-                </div>
-                <h1 class="profile-name glow-text">BiTi1903</h1>
-                <p class="profile-title">Full-Stack Developer & Mobile App Developer</p>
-            </div>
-        </header>
-
-        <!-- Technologies Section -->
-        <section class="tech-section">
-            <div class="section-header">
-                <h2>🛠 Technologies & Tools 🛠</h2>
-            </div>
-            
-            <div class="tech-grid">
-                <div class="tech-card">
-                    <h3 style="margin-bottom: 20px; color: #667eea;">Development Tools</h3>
-                    <div class="tech-badges">
-                        <span class="tech-badge">
-                            <img src="https://img.shields.io/badge/Visual%20Studio%20Code-282C34?logo=visual-studio-code&logoColor=007ACC" alt="VS Code" title="Visual Studio Code" />
-                        </span>
-                        <span class="tech-badge">
-                            <img src="https://img.shields.io/badge/GitHub-282C34?logo=github&logoColor=FFFFFF" alt="GitHub" title="GitHub" />
-                        </span>
-                    </div>
-                </div>
-
-                <div class="tech-card">
-                    <h3 style="margin-bottom: 20px; color: #667eea;">Backend & Web</h3>
-                    <div class="tech-badges">
-                        <span class="tech-badge">
-                            <img src="https://img.shields.io/badge/ASP.NET%20Core-282C34?logo=dotnet&logoColor=5C2D91" alt="ASP.NET Core" title="ASP.NET Core" />
-                        </span>
-                        <span class="tech-badge">
-                            <img src="https://img.shields.io/badge/C%23-282C34?logo=c-sharp&logoColor=9B4B96" alt="C#" title="C#" />
-                        </span>
-                    </div>
-                </div>
-
-                <div class="tech-card">
-                    <h3 style="margin-bottom: 20px; color: #667eea;">Mobile Development</h3>
-                    <div class="tech-badges">
-                        <span class="tech-badge">
-                            <img src="https://img.shields.io/badge/Flutter-282C34?logo=flutter&logoColor=02569B" alt="Flutter" title="Flutter" />
-                        </span>
-                        <span class="tech-badge">
-                            <img src="https://img.shields.io/badge/Dart-282C34?logo=dart&logoColor=0175C2" alt="Dart" title="Dart" />
-                        </span>
-                    </div>
-                </div>
-
-                <div class="tech-card">
-                    <h3 style="margin-bottom: 20px; color: #667eea;">Database & Cloud</h3>
-                    <div class="tech-badges">
-                        <span class="tech-badge">
-                            <img src="https://img.shields.io/badge/Firebase-282C34?logo=firebase&logoColor=FFCA28" alt="Firebase" title="Firebase" />
-                        </span>
-                        <span class="tech-badge">
-                            <img src="https://img.shields.io/badge/SQL-282C34?logo=postgresql&logoColor=00758F" alt="SQL" title="SQL" />
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- GitHub Stats Section -->
-        <section class="stats-section">
-            <div class="section-header">
-                <h2>🔥 GitHub Statistics 🔥</h2>
-            </div>
-            
-            <div class="stats-container">
-                <div class="stat-card">
-                    <img src="https://github-readme-stats.vercel.app/api?username=BiTi1903&show_icons=true&theme=tokyonight&hide_border=false&include_all_commits=true&count_private=true" 
-                         alt="GitHub Stats" />
-                </div>
-                <div class="stat-card">
-                    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=BiTi1903&layout=compact&theme=tokyonight&hide_border=false" 
-                         alt="Top Languages" />
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section class="contact-section">
-            <div class="section-header">
-                <h2>👽 Where to Find Me 👽</h2>
-                <p style="color: #a0a0a0; margin-top: 10px;">🌟 Kết nối với tôi</p>
-            </div>
-
-            <div class="contact-grid">
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fab fa-facebook"></i>
-                    </div>
-                    <h3>Facebook</h3>
-                    <a href="https://www.facebook.com/dunghackfemnha/" target="_blank">Lê Bảo Thiện</a>
-                </div>
-
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-phone"></i>
-                    </div>
-                    <h3>Phone</h3>
-                    <a href="tel:0865340630" target="_blank">0865340630</a>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <script>
-        // Add smooth reveal animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Apply animations to cards
-        document.addEventListener('DOMContentLoaded', function() {
-            const cards = document.querySelectorAll('.tech-card, .stat-card, .contact-item');
-            cards.forEach((card, index) => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(30px)';
-                card.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
-                observer.observe(card);
-            });
-        });
-
-        // Add interactive cursor effect
-        document.addEventListener('mousemove', function(e) {
-            const cursor = document.querySelector('.cursor');
-            if (!cursor) {
-                const newCursor = document.createElement('div');
-                newCursor.className = 'cursor';
-                newCursor.style.cssText = `
-                    position: fixed;
-                    width: 20px;
-                    height: 20px;
-                    background: radial-gradient(circle, rgba(102, 126, 234, 0.8), transparent);
-                    border-radius: 50%;
-                    pointer-events: none;
-                    z-index: 9999;
-                    transform: translate(-50%, -50%);
-                    transition: all 0.1s ease;
-                `;
-                document.body.appendChild(newCursor);
-            }
-            
-            const cursorElement = document.querySelector('.cursor');
-            cursorElement.style.left = e.clientX + 'px';
-            cursorElement.style.top = e.clientY + 'px';
-        });
-    </script>
-</body>
-</html>
+<div align="center">
+
+# 👋 Hello, I'm **Lê Bảo Thiện**
+
+<img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=600&size=24&duration=3000&pause=1000&color=00D9FF&center=true&vCenter=true&width=600&lines=Full-Stack+Developer+%F0%9F%9A%80;Mobile+App+Specialist+%F0%9F%93%B1;ASP.NET+Core+Expert+%E2%9A%A1;Flutter+%26+Dart+Enthusiast+%F0%9F%92%99;Always+Learning+%26+Growing+%F0%9F%8C%B1" alt="Typing Animation" />
+
+<img src="https://user-images.githubusercontent.com/74038190/225813708-98b745f2-7d22-48cf-9150-083f1b00d6c9.gif" width="500" alt="Coding GIF">
+
+[![Profile Views](https://komarev.com/ghpvc/?username=BiTi1903&color=00d9ff&style=for-the-badge&label=Profile+Views)](https://github.com/BiTi1903)
+[![GitHub Followers](https://img.shields.io/github/followers/BiTi1903?color=00d9ff&style=for-the-badge&logo=github&label=Followers)](https://github.com/BiTi1903?tab=followers)
+[![GitHub Stars](https://img.shields.io/github/stars/BiTi1903?color=00d9ff&style=for-the-badge&logo=github&label=Stars)](https://github.com/BiTi1903?tab=repositories)
+
+</div>
+
+---
+
+<div align="center">
+
+## 🎯 **About Me**
+
+<table>
+<tr>
+<td>
+
+**👨‍💻 Full-Stack Developer**  
+**📍 Vietnam 🇻🇳**  
+**💼 3+ years experience**  
+
+**🛠️ Tech Stack:**
+- **Backend:** ASP.NET Core • C# • SQL Server
+- **Mobile:** Flutter • Dart • Firebase  
+- **Frontend:** HTML5 • CSS3 • JavaScript
+- **Tools:** Git • VS Code • Postman
+
+**💡 What drives me:**
+- Clean Code 💻 • Problem Solving 🧩 • Innovation 🚀 • Learning 📚
+
+**🎯 Current Focus:**
+- Advanced Flutter Development • Microservices Architecture • Cloud Technologies • Open Source Contributions
+
+*✨ "Building the future, one commit at a time!"*
+
+</td>
+<td>
+
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="300" alt="Developer GIF">
+
+</td>
+</tr>
+</table>
+
+</div>
+
+---
+
+<div align="center">
+
+## 🛠️ **Tech Stack & Skills**
+
+<img src="https://user-images.githubusercontent.com/74038190/212257454-16e3712e-945a-4ca2-b238-408ad0bf87e6.gif" width="100" alt="Tech GIF">
+
+### **💻 Programming Languages**
+<p>
+  <img src="https://skillicons.dev/icons?i=cs,dart,js,html,css,sql" alt="Programming Languages" />
+</p>
+
+### **🚀 Frameworks & Technologies**
+<p>
+  <img src="https://skillicons.dev/icons?i=dotnet,flutter,bootstrap,jquery" alt="Frameworks" />
+</p>
+
+### **🗄️ Databases & Cloud**
+<p>
+  <img src="https://skillicons.dev/icons?i=firebase,mysql,sqlite,azure" alt="Databases" />
+</p>
+
+### **⚙️ Development Tools**
+<p>
+  <img src="https://skillicons.dev/icons?i=vscode,git,github,figma,postman,docker" alt="Tools" />
+</p>
+
+</div>
+
+---
+
+<div align="center">
+
+## 📊 **GitHub Statistics**
+
+<img src="https://user-images.githubusercontent.com/74038190/212284087-bbe7e430-757e-4901-90bf-4cd2ce3e1852.gif" width="100">
+
+<table>
+<tr>
+<td>
+<img src="https://github-readme-stats.vercel.app/api?username=BiTi1903&show_icons=true&theme=radical&hide_border=true&bg_color=0D1117&title_color=00D9FF&text_color=FFFFFF&icon_color=00D9FF" alt="GitHub Stats" />
+</td>
+<td>
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=BiTi1903&layout=compact&theme=radical&hide_border=true&bg_color=0D1117&title_color=00D9FF&text_color=FFFFFF" alt="Top Languages" />
+</td>
+</tr>
+</table>
+
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=BiTi1903&theme=radical&hide_border=true&background=0D1117&stroke=00D9FF&ring=00D9FF&fire=FF6B6B&currStreakLabel=00D9FF" alt="GitHub Streak" />
+
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=BiTi1903&bg_color=0d1117&color=00d9ff&line=00d9ff&point=ffffff&area=true&hide_border=true" alt="Contribution Graph" />
+
+</div>
+
+---
+
+<div align="center">
+
+## 🏆 **Achievements & Trophies**
+
+<img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width="100">
+
+<img src="https://github-profile-trophy.vercel.app/?username=BiTi1903&theme=radical&no-frame=true&no-bg=true&margin-w=4&row=2" alt="GitHub Trophies" />
+
+</div>
+
+---
+
+<div align="center">
+
+## 🎯 **Current Focus & Goals**
+
+<img src="https://user-images.githubusercontent.com/74038190/212257467-871d32b7-e401-42e8-a166-fcfd7baa4c6b.gif" width="100">
+
+```mermaid
+graph TD
+    A[🎯 2024 Goals] --> B[Master ASP.NET Core]
+    A --> C[Advanced Flutter]
+    A --> D[Cloud Technologies]
+    A --> E[Open Source Contributions]
+    
+    B --> B1[Microservices Architecture]
+    B --> B2[API Best Practices]
+    
+    C --> C1[State Management]
+    C --> C2[Performance Optimization]
+    
+    D --> D1[Azure Services]
+    D --> D2[DevOps Practices]
+    
+    E --> E1[Community Projects]
+    E --> E2[Knowledge Sharing]
+    
+    style A fill:#00d9ff,stroke:#333,stroke-width:4px,color:#000
+    style B fill:#ff6b6b,stroke:#333,stroke-width:2px
+    style C fill:#4ecdc4,stroke:#333,stroke-width:2px
+    style D fill:#45b7d1,stroke:#333,stroke-width:2px
+    style E fill:#96ceb4,stroke:#333,stroke-width:2px
+```
+
+</div>
+
+---
+
+<div align="center">
+
+## 🚀 **Featured Projects**
+
+<img src="https://user-images.githubusercontent.com/74038190/212257472-08e52665-c503-4bd9-aa20-f5a4dae769b5.gif" width="100">
+
+<table>
+<tr>
+<td width="50%">
+
+### 🌟 **E-Commerce Platform**
+<img src="https://img.shields.io/badge/Status-Active-success?style=for-the-badge" />
+
+**Tech Stack:** ASP.NET Core, SQL Server, Bootstrap  
+**Features:** User Authentication, Payment Integration, Admin Dashboard  
+
+[![Repo](https://img.shields.io/badge/Repository-View-00d9ff?style=for-the-badge&logo=github)](https://github.com/BiTi1903)
+
+</td>
+<td width="50%">
+
+### 📱 **Task Manager Mobile App**
+<img src="https://img.shields.io/badge/Status-In%20Progress-orange?style=for-the-badge" />
+
+**Tech Stack:** Flutter, Dart, Firebase  
+**Features:** Real-time Sync, Offline Support, Push Notifications  
+
+[![Repo](https://img.shields.io/badge/Repository-View-00d9ff?style=for-the-badge&logo=github)](https://github.com/BiTi1903)
+
+</td>
+</tr>
+<tr>
+<td width="50%">
+
+### 🎨 **Portfolio Website**
+<img src="https://img.shields.io/badge/Status-Completed-success?style=for-the-badge" />
+
+**Tech Stack:** ASP.NET Core, HTML5, CSS3, JavaScript  
+**Features:** Responsive Design, SEO Optimized, Contact Form  
+
+[![Repo](https://img.shields.io/badge/Repository-View-00d9ff?style=for-the-badge&logo=github)](https://github.com/BiTi1903)
+
+</td>
+<td width="50%">
+
+### 🔧 **Developer Tools**
+<img src="https://img.shields.io/badge/Status-Planning-blue?style=for-the-badge" />
+
+**Tech Stack:** C#, .NET Core, CLI  
+**Features:** Code Generation, Project Templates, Automation  
+
+[![Repo](https://img.shields.io/badge/Repository-Soon-gray?style=for-the-badge&logo=github)](https://github.com/BiTi1903)
+
+</td>
+</tr>
+</table>
+
+</div>
+
+---
+
+<div align="center">
+
+## 💼 **Skills & Proficiency**
+
+<img src="https://user-images.githubusercontent.com/74038190/212257460-738ff738-247f-4445-a718-cdd0ca76e2db.gif" width="100">
+
+<table>
+<tr>
+<td valign="top" width="33%">
+
+### **Backend Development**
+```text
+ASP.NET Core    ████████████████████ 95%
+C#              ████████████████████ 90%
+RESTful APIs    ████████████████████ 88%
+Entity Framework██████████████████   85%
+```
+
+</td>
+<td valign="top" width="33%">
+
+### **Mobile Development**
+```text
+Flutter         ███████████████████  85%
+Dart            ███████████████████  82%
+Firebase        ████████████████     80%
+State Management██████████████████   85%
+```
+
+</td>
+<td valign="top" width="33%">
+
+### **Frontend & Tools**
+```text
+HTML5/CSS3      ████████████████████ 90%
+JavaScript      ██████████████████   80%
+Bootstrap       ████████████████████ 88%
+Git/GitHub      ████████████████████ 92%
+```
+
+</td>
+</tr>
+</table>
+
+</div>
+
+---
+
+<div align="center">
+
+## 📈 **Weekly Development Breakdown**
+
+<img src="https://user-images.githubusercontent.com/74038190/212257465-7ce8d493-cac5-494e-982a-5a9deb852c4b.gif" width="100">
+
+<!--START_SECTION:waka-->
+```text
+C#               12 hrs 30 mins  ████████████████▓░░░░   45.2%
+Dart             8 hrs 15 mins   ███████████▓░░░░░░░░░   29.8%
+HTML/CSS         3 hrs 45 mins   ████▓░░░░░░░░░░░░░░░░   13.6%
+SQL              2 hrs 10 mins   ██▓░░░░░░░░░░░░░░░░░░    7.8%
+Others           1 hr 05 mins    █░░░░░░░░░░░░░░░░░░░░    3.6%
+```
+<!--END_SECTION:waka-->
+
+</div>
+
+---
+
+<div align="center">
+
+## 🌐 **Connect With Me**
+
+<img src="https://user-images.githubusercontent.com/74038190/212257468-1e9a91f1-b626-4baa-b15d-5c385dfa7ed2.gif" width="100">
+
+<p>
+<a href="https://www.facebook.com/dunghackfemnha/">
+<img src="https://img.shields.io/badge/Facebook-Lê%20Bảo%20Thiện-1877F2?style=for-the-badge&logo=facebook&logoColor=white" alt="Facebook" />
+</a>
+<a href="tel:0865340630">
+<img src="https://img.shields.io/badge/Phone-0865340630-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" alt="Phone" />
+</a>
+<a href="mailto:your.email@gmail.com">
+<img src="https://img.shields.io/badge/Email-Contact%20Me-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
+</a>
+</p>
+
+<p>
+<a href="https://github.com/BiTi1903">
+<img src="https://img.shields.io/badge/GitHub-BiTi1903-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
+</a>
+<a href="https://linkedin.com/in/your-linkedin">
+<img src="https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+</a>
+</p>
+
+</div>
+
+---
+
+<div align="center">
+
+## 🎮 **Fun Zone**
+
+<img src="https://user-images.githubusercontent.com/74038190/212257479-1f8a0d2d-5aed-4de5-9e4a-4e1feaa66c0b.gif" width="100">
+
+### **💡 Random Dev Quote**
+<img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical" alt="Random Dev Quote" />
+
+### **🎵 Currently Listening To**
+[![Spotify](https://spotify-github-profile.vercel.app/api/spotify-playing?username=your-spotify-username)](https://open.spotify.com/user/your-spotify-username)
+
+### **☕ Fun Facts About Me**
+```javascript
+const funFacts = {
+  🌙: "Night owl - Most productive between 10 PM - 2 AM",
+  ☕: "Coffee consumption: ~5 cups per day",
+  🎮: "Gaming relaxes my mind for better problem solving",
+  📚: "Always reading: Tech blogs, documentation, and novels",
+  🚀: "Dream: Contributing to space technology someday",
+  🎯: "Perfectionist when it comes to code quality"
+};
+```
+
+</div>
+
+---
+
+<div align="center">
+
+## 🐍 **Contribution Snake**
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/BiTi1903/BiTi1903/output/github-contribution-grid-snake-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/BiTi1903/BiTi1903/output/github-contribution-grid-snake.svg">
+  <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/BiTi1903/BiTi1903/output/github-contribution-grid-snake.svg">
+</picture>
+
+</div>
+
+---
+
+<div align="center">
+
+<img src="https://user-images.githubusercontent.com/74038190/212284158-e840e285-664b-44d7-b79b-e264b5e54825.gif" width="400">
+
+### 💫 **"Building the future, one commit at a time"** 💫
+
+**⭐️ From [BiTi1903](https://github.com/BiTi1903) with ❤️**
+
+<img src="https://raw.githubusercontent.com/Trilokia/Trilokia/379277808c61ef204768a61bbc5d25bc7798ccf1/bottom_header.svg" alt="Bottom Header" />
+
+</div>
