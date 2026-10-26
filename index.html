@@ -1,95 +1,146 @@
 <!DOCTYPE html>
 <html lang="vi">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Portfolio cá nhân và các dự án nổi bật của tôi."
-    />
-    <title>Portfolio | Tên của bạn</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Profile cá nhân của Thiện (BiTi), Software Developer.">
+  <title>Thiện (BiTi) | Developer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
 
-  <body>
-    <header class="hero">
-      <nav class="navbar">
-        <a class="logo" href="#">Portfolio<span>.</span></a>
-        <a
-          class="github-link"
-          href="https://github.com/ten-github-cua-ban"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          GitHub ↗
-        </a>
-      </nav>
-
-      <div class="hero-content">
-        <p class="eyebrow">XIN CHÀO, MÌNH LÀ</p>
-        <h1>Tên của bạn</h1>
-        <p class="intro">
-          Một lập trình viên yêu thích công nghệ và thích tạo ra những sản phẩm
-          hữu ích.
-        </p>
-        <a class="button" href="#projects">Xem dự án của mình ↓</a>
-      </div>
-
-      <div class="hero-decoration" aria-hidden="true">&lt;/&gt;</div>
-    </header>
+<body>
+  <div class="page">
+    <nav class="navbar">
+      <a class="brand" href="#">biti<span>.</span></a>
+      <a
+        class="github-button"
+        href="https://github.com/BiTi1903"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        GitHub <span>↗</span>
+      </a>
+    </nav>
 
     <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow"><span></span> SOFTWARE DEVELOPER</p>
+          <h1>Xin chào,<br>mình là <span>Thiện.</span></h1>
+          <p class="intro">
+            Mình là BiTi — yêu thích xây dựng website và ứng dụng,
+            luôn tò mò về cách công nghệ có thể giải quyết những vấn đề thực tế.
+          </p>
+
+          <div class="hero-actions">
+            <a class="primary-button" href="#projects">Khám phá dự án <span>↓</span></a>
+            <a class="text-link" href="https://github.com/BiTi1903">Hồ sơ GitHub ↗</a>
+          </div>
+        </div>
+
+        <div class="profile-card">
+          <div class="avatar">BT</div>
+          <p class="card-label">CURRENTLY EXPLORING</p>
+          <h2>Web & App Development</h2>
+          <p class="card-description">
+            Từ giao diện người dùng đến kết nối dữ liệu và các tính năng phía sau.
+          </p>
+          <div class="status"><span></span> Luôn sẵn sàng học hỏi</div>
+          <div class="card-decoration">&lt;/&gt;</div>
+        </div>
+      </section>
+
       <section class="section" id="projects">
         <div class="section-heading">
           <div>
-            <p class="eyebrow">MỘT VÀI SẢN PHẨM</p>
+            <p class="eyebrow">SELECTED WORK</p>
             <h2>Dự án nổi bật</h2>
           </div>
-          <p class="section-description">
-            Một số dự án mình đã thực hiện và đang tiếp tục hoàn thiện.
+          <p class="section-note">
+            Một vài sản phẩm mình đã xây dựng và phát triển.
           </p>
         </div>
 
         <div class="project-grid">
           <article class="project-card">
-            <span class="project-number">01</span>
-            <h3>Dự án 1</h3>
-            <p>Mô tả ngắn về dự án, chức năng chính và vấn đề mà dự án giải quyết.</p>
-            <div class="tags">
-              <span>React</span>
-              <span>CSS</span>
+            <div class="project-top">
+              <span class="project-icon">✳</span>
+              <span class="project-index">01 / WEB</span>
             </div>
-            <a href="#" class="project-link">Xem dự án <span>↗</span></a>
+            <h3>Orora</h3>
+            <p>
+              Website giới thiệu sản phẩm với trang quản trị, bộ sưu tập
+              và trải nghiệm tương thích trên điện thoại.
+            </p>
+            <div class="tags">
+              <span>React</span><span>Vite</span><span>Firebase</span>
+            </div>
+            <a href="https://github.com/BiTi1903/Orora" target="_blank" rel="noopener noreferrer">
+              Xem mã nguồn <span>↗</span>
+            </a>
           </article>
 
           <article class="project-card">
-            <span class="project-number">02</span>
-            <h3>Dự án 2</h3>
-            <p>Thêm vài dòng giới thiệu về công nghệ hoặc điểm nổi bật của dự án.</p>
-            <div class="tags">
-              <span>JavaScript</span>
-              <span>Firebase</span>
+            <div class="project-top">
+              <span class="project-icon">⌘</span>
+              <span class="project-index">02 / WEB</span>
             </div>
-            <a href="#" class="project-link">Xem dự án <span>↗</span></a>
+            <h3>GameGuide</h3>
+            <p>
+              Website hướng dẫn game, hỗ trợ quản lý bài viết và nội dung
+              dành cho cộng đồng người chơi.
+            </p>
+            <div class="tags">
+              <span>Next.js</span><span>Firebase</span>
+            </div>
+            <a href="https://github.com/BiTi1903" target="_blank" rel="noopener noreferrer">
+              Xem GitHub <span>↗</span>
+            </a>
           </article>
 
           <article class="project-card">
-            <span class="project-number">03</span>
-            <h3>Dự án 3</h3>
-            <p>Mô tả ngắn gọn để người xem biết dự án này làm được những gì.</p>
-            <div class="tags">
-              <span>HTML</span>
-              <span>CSS</span>
+            <div class="project-top">
+              <span class="project-icon">◈</span>
+              <span class="project-index">03 / APP</span>
             </div>
-            <a href="#" class="project-link">Xem dự án <span>↗</span></a>
+            <h3>Flutter Retail</h3>
+            <p>
+              Ứng dụng bán hàng với các màn hình hồ sơ người dùng
+              và xác thực tài khoản.
+            </p>
+            <div class="tags">
+              <span>Flutter</span><span>Dart</span><span>Firebase</span>
+            </div>
+            <a href="https://github.com/BiTi1903" target="_blank" rel="noopener noreferrer">
+              Xem GitHub <span>↗</span>
+            </a>
           </article>
+        </div>
+      </section>
+
+      <section class="section stack-section">
+        <div>
+          <p class="eyebrow">TOOLS I USE</p>
+          <h2>Công nghệ</h2>
+        </div>
+
+        <div class="tech-list">
+          <span>JavaScript</span>
+          <span>TypeScript</span>
+          <span>React</span>
+          <span>Next.js</span>
+          <span>Flutter</span>
+          <span>Firebase</span>
+          <span>MySQL</span>
+          <span>Git</span>
         </div>
       </section>
     </main>
 
     <footer>
-      <p>© 2026 Tên của bạn</p>
-      <a href="https://github.com/ten-github-cua-ban">GitHub ↗</a>
+      <span>© 2026 Thiện (BiTi)</span>
+      <a href="https://github.com/BiTi1903">Được xây dựng bằng HTML & CSS ↗</a>
     </footer>
-  </body>
+  </div>
+</body>
 </html>
