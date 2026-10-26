@@ -1,25 +1,95 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang Profilae của tôi</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio cá nhân và các dự án nổi bật của tôi."
+    />
+    <title>Portfolio | Tên của bạn</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
-    <header>
-      <h1>Chào mừng đến với GitHub của tôi!</h1>
-      <p>Tôi là một lập trình viên đam mê công nghệ.</p>
+    <header class="hero">
+      <nav class="navbar">
+        <a class="logo" href="#">Portfolio<span>.</span></a>
+        <a
+          class="github-link"
+          href="https://github.com/ten-github-cua-ban"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub ↗
+        </a>
+      </nav>
+
+      <div class="hero-content">
+        <p class="eyebrow">XIN CHÀO, MÌNH LÀ</p>
+        <h1>Tên của bạn</h1>
+        <p class="intro">
+          Một lập trình viên yêu thích công nghệ và thích tạo ra những sản phẩm
+          hữu ích.
+        </p>
+        <a class="button" href="#projects">Xem dự án của mình ↓</a>
+      </div>
+
+      <div class="hero-decoration" aria-hidden="true">&lt;/&gt;</div>
     </header>
+
     <main>
-      <section>
-        <h2>Dự án nổi bật</h2>
-        <ul>
-          <li>Dự án 1</li>
-          <li>Dự án 2</li>
-          <li>Dự án 3</li>
-        </ul>
+      <section class="section" id="projects">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">MỘT VÀI SẢN PHẨM</p>
+            <h2>Dự án nổi bật</h2>
+          </div>
+          <p class="section-description">
+            Một số dự án mình đã thực hiện và đang tiếp tục hoàn thiện.
+          </p>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card">
+            <span class="project-number">01</span>
+            <h3>Dự án 1</h3>
+            <p>Mô tả ngắn về dự án, chức năng chính và vấn đề mà dự án giải quyết.</p>
+            <div class="tags">
+              <span>React</span>
+              <span>CSS</span>
+            </div>
+            <a href="#" class="project-link">Xem dự án <span>↗</span></a>
+          </article>
+
+          <article class="project-card">
+            <span class="project-number">02</span>
+            <h3>Dự án 2</h3>
+            <p>Thêm vài dòng giới thiệu về công nghệ hoặc điểm nổi bật của dự án.</p>
+            <div class="tags">
+              <span>JavaScript</span>
+              <span>Firebase</span>
+            </div>
+            <a href="#" class="project-link">Xem dự án <span>↗</span></a>
+          </article>
+
+          <article class="project-card">
+            <span class="project-number">03</span>
+            <h3>Dự án 3</h3>
+            <p>Mô tả ngắn gọn để người xem biết dự án này làm được những gì.</p>
+            <div class="tags">
+              <span>HTML</span>
+              <span>CSS</span>
+            </div>
+            <a href="#" class="project-link">Xem dự án <span>↗</span></a>
+          </article>
+        </div>
       </section>
     </main>
+
+    <footer>
+      <p>© 2026 Tên của bạn</p>
+      <a href="https://github.com/ten-github-cua-ban">GitHub ↗</a>
+    </footer>
   </body>
 </html>
